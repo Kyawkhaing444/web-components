@@ -64,6 +64,7 @@ export const CursorStyle = styled.div`
   z-index: 10;
   contain: layout style size;
   pointer-events: none;
+  opacity: 0;
   &.media-blend {
     z-index: 100;
     mix-blend-mode: exclusion;
@@ -83,7 +84,7 @@ export const CursorStyle = styled.div`
     background: black;
     border-radius: 50%;
   }
-  &.cursor-media {
+  .cursor-media {
     display: block;
     height: 350px;
     width: 350px;
