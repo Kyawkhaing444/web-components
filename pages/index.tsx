@@ -4,27 +4,32 @@ import { useRef, useState } from 'react'
 import { CursorStyle, HeroContainer, TitleContainer } from '../components/styles/HeroContainer'
 import { getMousePos, lerp } from '../utils'
 import gsap from 'gsap';
-import { onMouseMove } from '../utils/cursor'
+import { onMouseEnterATag, onMouseEnterText, onMouseLeaveATag, onMouseLeaveText, onMouseMove } from '../utils/cursor'
 
 const Home: NextPage = () => {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const cursor = useRef<HTMLDivElement>(null);
 
+  const texts = ['Websites', 'Apps', 'Branding'];
+
   return (
-    <HeroContainer onMouseMove={(e) => onMouseMove({ e, mouse, setMouse, cursor })}>
+    <HeroContainer onMouseMove={(e) => onMouseMove({ e, cursor })}>
       <TitleContainer>
-        <div className="hero-inner-link-item">
-          <div className="hover_effect_item"></div>
-          <Link href="/"><a><span>Websites</span></a></Link>
-        </div>
-        <div className="hero-inner-link-item">
-          <div className="hover_effect_item"></div>
-          <Link href="/"><a><span>Apps</span></a></Link>
-        </div>
-        <div className="hero-inner-link-item">
-          <div className="hover_effect_item"></div>
-          <Link href="/"><a><span>Branding</span></a></Link>
-        </div>
+        {texts.map(text => (
+          <div key={text} data-video-src={text} className="hero-inner-link-item"
+            onMouseEnter={(e) => onMouseEnterText({e, cursor})}
+            onMouseLeave={(e) => onMouseLeaveText({e, cursor})}
+          >
+            <div className="hover_effect_item"></div>
+            <Link href="/">
+              <a
+               onMouseEnter={(e) => onMouseEnterATag({e, cursor})}
+               onMouseLeave={(e) => onMouseLeaveATag({e, cursor})}
+              >
+                <span>{text}</span>
+              </a>
+            </Link>
+          </div>
+        ))}
       </TitleContainer>
       <CursorStyle ref={cursor}>
         <div className='cursor-media'>
@@ -34,7 +39,7 @@ const Home: NextPage = () => {
             autoPlay
             muted
             loop
-            id="websites"
+            id="Websites"
           ></video>
           <video
             src="videos/apps.mp4"
@@ -42,7 +47,7 @@ const Home: NextPage = () => {
             autoPlay
             muted
             loop
-            id="apps"
+            id="Apps"
           ></video>
           <video
             src="videos/branding.mp4"
@@ -50,7 +55,7 @@ const Home: NextPage = () => {
             autoPlay
             muted
             loop
-            id="branding"
+            id="Branding"
           ></video>
         </div>
       </CursorStyle>

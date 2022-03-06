@@ -12,8 +12,7 @@ export const HeroContainer = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 1rem;
-  &.hover_effect_item {
+  .hover_effect_item {
     position: relative;
     &:before {
       content: "";

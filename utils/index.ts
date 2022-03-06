@@ -11,3 +11,26 @@ export const getMousePos = (e: React.MouseEvent) => {
   }
   return { x: posx, y: posy };
 };
+
+// Get sibilings
+export const getSiblings = (e: Element | null) => {
+  // for collecting siblings
+  let siblings = [] as ChildNode[];
+  if(!e){
+    return [];
+  }
+  // if no parent, return no sibling
+  if (!e.parentNode) {
+    return siblings;
+  }
+  // first child of the parent node
+  let sibling = e.parentNode.firstChild;
+  // collecting siblings
+  while (sibling) {
+    if (sibling.nodeType === 1 && sibling !== e) {
+      siblings.push(sibling);
+    }
+    sibling = sibling.nextSibling;
+  }
+  return siblings;
+};
