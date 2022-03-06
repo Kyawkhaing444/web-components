@@ -1,9 +1,6 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useRef  } from 'react'
 import { CursorStyle, HeroContainer, TitleContainer } from '../components/styles/HeroContainer'
-import { getMousePos, lerp } from '../utils'
-import gsap from 'gsap';
 import { onMouseEnterATag, onMouseEnterText, onMouseLeaveATag, onMouseLeaveText, onMouseMove } from '../utils/cursor'
 
 const Home: NextPage = () => {
@@ -20,14 +17,13 @@ const Home: NextPage = () => {
             onMouseLeave={(e) => onMouseLeaveText({e, cursor})}
           >
             <div className="hover_effect_item"></div>
-            <Link href="/">
               <a
-               onMouseEnter={(e) => onMouseEnterATag({e, cursor})}
-               onMouseLeave={(e) => onMouseLeaveATag({e, cursor})}
+                onMouseEnter={(e) => onMouseEnterATag({e, cursor})}
+                onMouseLeave={(e) => onMouseLeaveATag({e, cursor})}
+                href="#"
               >
                 <span>{text}</span>
               </a>
-            </Link>
           </div>
         ))}
       </TitleContainer>

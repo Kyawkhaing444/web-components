@@ -12,6 +12,11 @@ export const HeroContainer = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
+  z-index: 11;
+  position: relative;
+  .hero-inner-link-item{
+    z-index: 10;
+  }
   .hover_effect_item {
     position: relative;
     &:before {
@@ -29,6 +34,7 @@ export const TitleContainer = styled.div`
     display: inline-block;
     position: relative;
     overflow: hidden;
+    z-index: 11;
     text-decoration: none;
     color: transparent;
     transition: color 0.3s, -webkit-text-stroke 0.3s;

@@ -1,6 +1,6 @@
 import { RefObject } from 'react';
 import { getMousePos, lerp, getSiblings } from './index';
-import { gsap } from "gsap/dist/gsap";
+import { gsap } from "gsap";
 
   interface IMouse {
     x: number;
@@ -59,9 +59,6 @@ import { gsap } from "gsap/dist/gsap";
       // If I am hovering on the item for on page load I want to scale the cursor media
       if(item.matches(':hover')){
         setVideo({ item });
-        if(cursor.current && cursor.current.children){
-          scaleCursor(cursor.current.children[0], 0.8);
-        }
       }
     })
   }
