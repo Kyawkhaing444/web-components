@@ -30,29 +30,38 @@ const Home: NextPage = () => {
       <CursorStyle ref={cursor}>
         <div className='cursor-media'>
           <video
-            src="videos/websites.mp4"
-            preload="auto"
             autoPlay
             muted
             loop
+            playsInline
+            preload='auto'
             id="Websites"
-          ></video>
+          >
+            <source src="videos/websites.mp4"
+            type="video/mp4"></source>
+          </video>
           <video
-            src="videos/apps.mp4"
-            preload="auto"
             autoPlay
             muted
             loop
+            playsInline
+            preload='auto'
             id="Apps"
-          ></video>
+          >
+            <source src="videos/apps.mp4"
+            type="video/mp4"></source>
+          </video>
           <video
-            src="videos/branding.mp4"
-            preload="auto"
             autoPlay
             muted
             loop
+            playsInline
+            preload='auto'
             id="Branding"
-          ></video>
+          >
+            <source src="videos/branding.mp4"
+            type="video/mp4"></source>
+          </video>
         </div>
       </CursorStyle>
     </HeroContainer>
