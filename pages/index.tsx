@@ -37,7 +37,7 @@ const Home: NextPage = () => {
             preload='auto'
             id="Websites"
           >
-            <source src="videos/websites.mp4"
+            <source src="videos/websites.m4v"
             type="video/mp4"></source>
           </video>
           <video
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
             preload='auto'
             id="Apps"
           >
-            <source src="videos/apps.mp4"
+            <source src="videos/apps.m4v"
             type="video/mp4"></source>
           </video>
           <video
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
             preload='auto'
             id="Branding"
           >
-            <source src="videos/branding.mp4"
+            <source src="videos/branding.m4v"
             type="video/mp4"></source>
           </video>
         </div>
